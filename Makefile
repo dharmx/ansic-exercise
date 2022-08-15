@@ -3,6 +3,9 @@ all: $(patsubst %.c, %.out, $(wildcard *.c))
 htoi.out: htoi.o
 	$(CC) -o htoi.out htoi.o
 
+any.out: any.o
+	$(CC) -o any.out any.o
+
 btn.out: btn.o
 	$(CC) -o btn.out btn.o
 
@@ -29,6 +32,9 @@ rmblank.o: rmblank.c def.h
 
 btn_repr.o: btn_repr.c def.h
 	$(CC) -c btn_repr.c
+
+any.o: any.c def.h
+	$(CC) -c any.c
 
 build: $(wildcard *.c)
 	$(CC) -c $?
