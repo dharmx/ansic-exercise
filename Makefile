@@ -1,19 +1,19 @@
-all: htoi btn rmblank squeeze btn_repr
+all: $(patsubst %.c, %.out, $(wildcard *.c))
 
-htoi: htoi.o
-	$(CC) -o htoi htoi.o
+htoi.out: htoi.o
+	$(CC) -o htoi.out htoi.o
 
-btn: btn.o
-	$(CC) -o btn btn.o
+btn.out: btn.o
+	$(CC) -o btn.out btn.o
 
-rmblank: rmblank.o
-	$(CC) -o rmblank rmblank.o
+rmblank.out: rmblank.o
+	$(CC) -o rmblank.out rmblank.o
 
-squeeze: squeeze.o
-	$(CC) -o squeeze squeeze.o
+squeeze.out: squeeze.o
+	$(CC) -o squeeze.out squeeze.o
 
-btn_repr: btn_repr.o
-	$(CC) -o btn_repr btn_repr.o
+btn_repr.out: btn_repr.o
+	$(CC) -o btn_repr.out btn_repr.o
 
 htoi.o: htoi.c def.h
 	$(CC) -c htoi.c
@@ -30,5 +30,12 @@ rmblank.o: rmblank.c def.h
 btn_repr.o: btn_repr.c def.h
 	$(CC) -c btn_repr.c
 
+build: $(wildcard *.c)
+	$(CC) -c $?
+
+format:
+	clang-format -i *.c
+
 clean:
-	rm *.o; rm squeeze; rm htoi; rm btn; rm rmblank; rm btn_repr
+	rm *.o
+	rm *.out

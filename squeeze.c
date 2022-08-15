@@ -13,7 +13,8 @@ int main() {
 
 int in(char k, char s[]) {
     for (int i = 0; s[i] != '\0'; ++i)
-        if (s[i] == k) return 1;
+        if (s[i] == k)
+            return 1;
     return 0;
 }
 
@@ -29,6 +30,6 @@ void squeeze_one(char s[], char k) {
     int i, j;
     for (i = j = 0; s[i] != '\0'; ++i)
         if (s[i] != k)
-            s[j++] = s[i]; 
+            s[j++] = s[i];
     s[j] = '\0';
 }
