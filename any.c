@@ -6,7 +6,11 @@ int main() {
 }
 
 int any(char a[], char b[]) {
-    return 1;
+    for (int i = 0; a[i] != '\0'; ++i)
+        for (int j = 0; b[j] != '\0'; ++j)
+            if (a[i] == b[j])
+                return i;
+    return -1;
 }
 
 // vim:filetype=c
