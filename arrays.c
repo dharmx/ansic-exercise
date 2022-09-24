@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main() {
+int main() {
     int blank, tab, newline;
     blank = tab = newline = 0;
 

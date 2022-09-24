@@ -9,6 +9,9 @@ itob.out: itob.o
 goto.out: goto.o
 	$(CC) -o goto.out goto.o
 
+grep.out: grep.o
+	$(CC) -o grep.out grep.o
+
 trim.out: trim.o
 	$(CC) -o trim.out trim.o
 
@@ -149,6 +152,9 @@ itob.o: itob.c def.h
 
 goto.o: goto.c def.h
 	$(CC) -c goto.c
+
+grep.o: grep.c def.h
+	$(CC) -c grep.c
 
 trim.o: trim.c def.h
 	$(CC) -c trim.c

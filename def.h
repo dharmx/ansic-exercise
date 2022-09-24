@@ -45,7 +45,7 @@ int trim(char[]);
 
 void any_zero(int[], int);
 
-int getline(char[], int);
+int get_line(char[], int);
 int strindex(char[], char[]);
 
 // vim:filetype=c

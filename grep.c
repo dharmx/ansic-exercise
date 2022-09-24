@@ -7,7 +7,7 @@ int main(void) {
     char line[MAX_LINE];
     int found = 0;
 
-    while (getline(line, MAX_LINE) > 0)
+    while (get_line(line, MAX_LINE) > 0)
         if (strindex(line, pattern) >= 0) {
             printf("%s", line);
             found++;
@@ -15,7 +15,7 @@ int main(void) {
     return found;
 }
 
-int getline(char s[], int lim) {
+int get_line(char s[], int lim) {
     int c, i;
     i = 0;
     while (--lim > 0 && (c = getchar()) != EOF && c != '\n')
